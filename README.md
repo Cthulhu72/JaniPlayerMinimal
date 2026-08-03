@@ -1,1 +1,1 @@
-# JanuPlayerMinimal
+# JaniPlayerMinimal
