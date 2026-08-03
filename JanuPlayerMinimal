@@ -1,0 +1,11 @@
+JaniPlayerMinimal/
+ ├── app/
+ │   ├── src/
+ │   │   ├── main/
+ │   │   │   ├── java/com/janiplayer/minimal/MainActivity.kt
+ │   │   │   ├── res/layout/activity_main.xml
+ │   │   │   ├── AndroidManifest.xml
+ │   ├── build.gradle
+ ├── build.gradle
+ ├── settings.gradle
+ ├── gradle.properties
