@@ -1,14 +1,32 @@
-- name: Checkout
-  uses: actions/checkout@v3
+on:
+  push:
+    tags:
+      - 'v*'
 
-- name: Make gradlew executable
-  run: chmod +x ./gradlew
+jobs:
+  release:
+    runs-on: ubuntu-latest
 
-- name: Set up JDK
-  uses: actions/setup-java@v3
-  with:
-    distribution: 'temurin'
-    java-version: '17'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-- name: Build Release Apk
-  run: ./gradlew assembleRelease
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build Release Apk
+        run: ./gradlew assembleRelease
+
+      - name: List APK files
+        run: ls -R app/build/outputs/apk/
+
+      - name: Upload Release APK
+        uses: softprops/action-gh-release@v1
+        with:
+          files: app/build/outputs/apk/release/*.apk
