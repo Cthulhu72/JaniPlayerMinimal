@@ -1,3 +1,5 @@
+- name: List APK files
+  run: ls -R app/build/outputs/apk/release/
 name: Jani Player Release
 
 on:
