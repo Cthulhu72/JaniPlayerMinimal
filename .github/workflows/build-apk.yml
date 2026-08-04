@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Make gradlew executable
-        run: chmod +x JaniPlayerMinimal/gradlew
+        run: chmod +x JanuPlayerMinimal/gradlew
 
       - name: Set up JDK
         uses: actions/setup-java@v3
@@ -21,12 +21,12 @@ jobs:
           java-version: '17'
 
       - name: Build Release Apk
-        run: JaniPlayerMinimal/gradlew assembleRelease
+        run: JanuPlayerMinimal/gradlew assembleRelease
 
       - name: List APK files
-        run: ls -R JaniPlayerMinimal/app/build/outputs/apk/
+        run: ls -R JanuPlayerMinimal/app/build/outputs/apk/
 
       - name: Upload Release APK
         uses: softprops/action-gh-release@v1
         with:
-          files: JaniPlayerMinimal/app/build/outputs/apk/release/*.apk
+          files: JanuPlayerMinimal/app/build/outputs/apk/release/*.apk
