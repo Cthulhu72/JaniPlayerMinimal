@@ -1,4 +1,4 @@
-package com.janiplayer.minimal
+package com.janiplayerminimal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
