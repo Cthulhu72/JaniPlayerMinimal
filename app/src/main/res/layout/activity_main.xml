@@ -1,1 +1,17 @@
 setContentView(R.layout.activity_main)
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jani Player Minimal"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
