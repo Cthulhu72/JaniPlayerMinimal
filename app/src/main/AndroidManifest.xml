@@ -3,7 +3,6 @@
 
     <application
     android:label="Jani Player Minimal"
-    android:icon="@mipmap/ic_launcher"
     android:theme="@style/Theme.Material3.DayNight.NoActionBar">
 
         <activity
