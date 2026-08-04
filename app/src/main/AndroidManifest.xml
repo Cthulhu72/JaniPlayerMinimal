@@ -3,7 +3,8 @@
 
     <application
     android:label="Jani Player Minimal"
-    android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+    android:icon="@drawable/jani_player_icon"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
 
         <activity
             android:name=".MainActivity"
