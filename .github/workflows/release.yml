@@ -1,4 +1,4 @@
-name: Release APK
+name: Jani Player Release
 
 on:
   push:
@@ -19,10 +19,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
+      - name: Build Release APK
+        run: ./gradlew assembleRelease
 
       - name: Upload Release APK
         uses: softprops/action-gh-release@v1
         with:
-          files: app/build/outputs/apk/debug/app-debug.apk
+          tag_name: ${{ github.ref_name }}
+          name: "Jani Player ${{ github.ref_name }}"
+          files: app/build/outputs/apk/release/app-release.apk
