@@ -1,5 +1,8 @@
+- name: Build Release Apk
+  run: ./gradlew assembleRelease
+
 - name: List APK files
-  run: ls -R app/build/outputs/apk/release/
+  run: ls -R app/build/outputs/apk/
 name: Jani Player Release
 
 on:
