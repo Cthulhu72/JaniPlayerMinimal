@@ -6,7 +6,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ColorLens
 import androidx.compose.material.icons.filled.Equalizer
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -96,44 +95,4 @@ private fun SettingsItem(
             }
         }
     }
-}
-val launcher = rememberLauncherForActivityResult(
-    contract = ActivityResultContracts.OpenMultipleDocuments(),
-    onResult = { uris ->
-        playlistViewModel.addFiles(uris)
-    }
-)
-
-Button(onClick = {
-    launcher.launch(arrayOf("audio/*"))
-}) {
-    Text("Fájlok hozzáadása")
-}
-val dirLauncher = rememberLauncherForActivityResult(
-    contract = ActivityResultContracts.OpenDocumentTree(),
-    onResult = { uri ->
-        val children = context.contentResolver.query(
-            uri,
-            null,
-            null,
-            null,
-            null
-        )
-
-        val uris = mutableListOf<Uri>()
-        children?.use { cursor ->
-            val col = cursor.getColumnIndexOrThrow(DocumentsContract.Document.COLUMN_DOCUMENT_ID)
-            while (cursor.moveToNext()) {
-                val docId = cursor.getString(col)
-                val childUri = DocumentsContract.buildDocumentUriUsingTree(uri, docId)
-                uris.add(childUri)
-            }
-        }
-
-        playlistViewModel.addDirectory(uris)
-    }
-)
-
-Button(onClick = { dirLauncher.launch(null) }) {
-    Text("Mappa hozzáadása")
 }
