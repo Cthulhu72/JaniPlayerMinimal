@@ -20,7 +20,13 @@ fun AudioEffectsSettingsScreen(
     onBack: () -> Unit
 ) {
     val state by vm.state.collectAsState()
+    val engine = remember { AudioEffectsEngine(player.audioSessionId) }
+    val repository = remember { DspRepository(context) }
 
+    val vm: DspViewModel = viewModel(
+    factory = DspViewModelFactory(engine, repository)
+)
+    
     Column(
         modifier = Modifier
             .fillMaxSize()
