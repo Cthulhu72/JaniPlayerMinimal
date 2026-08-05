@@ -14,49 +14,67 @@ import com.janiplayer.audioeffects.AudioEffectsDataStore
 import com.janiplayer.audioeffects.AudioEffectsViewModel
 import com.janiplayer.audioeffects.AudioEffectsMainScreen
 
-Composable
+Compo@Composable
 fun AudioEffectsSettingsScreen(
-    onBack: () -> Unit = {}
+    vm: DspViewModel,
+    onBack: () -> Unit
 ) {
-    val vm: DspViewModel = viewModel(factory = DspViewModelFactory(engine))
     val state by vm.state.collectAsState()
-    val context = LocalContext.current
-    val dataStore = remember { AudioEffectsDataStore(context) }
 
-    // Mivel itt nincs player, audioSessionId = 0 → csak a UI + DataStore működik
-    val viewModel = remember {
-        AudioEffectsViewModel(audioSessionId = 0, dataStore = dataStore)
-    }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
 
-    val state by viewModel.state.collectAsState()
+        Text(
+            text = "Audio Effects",
+            style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier.padding(bottom = 24.dp)
+        )
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("Audio Effects") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = null)
-                    }
-                }
+        // EQ sávok
+        Text("Equalizer", style = MaterialTheme.typography.titleMedium)
+        Spacer(Modifier.height(8.dp))
+
+        state.eqBands.forEachIndexed { index, level ->
+            Text("Sáv ${index + 1}")
+            Slider(
+                value = level.toFloat(),
+                onValueChange = { vm.onEqBandChange(index, it.toInt().toShort()) },
+                valueRange = -1500f..1500f
             )
+            Spacer(Modifier.height(8.dp))
         }
-    ) { padding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .padding(16.dp)
-        ) {
-            AudioEffectsMainScreen(
-                state = state,
-                accentColor = MaterialTheme.colorScheme.primary,
-                onBandChange = viewModel::onBandGainChange,
-                onPresetSelected = viewModel::onPresetSelected,
-                onBassChange = viewModel::onBassBoostChange,
-                onVirtualizerChange = viewModel::onVirtualizerChange,
-                onLoudnessChange = viewModel::onLoudnessChange
-            )
-        }
+
+        Spacer(Modifier.height(24.dp))
+
+        // BassBoost
+        Text("Bass Boost", style = MaterialTheme.typography.titleMedium)
+        Slider(
+            value = state.bass.toFloat(),
+            onValueChange = { vm.onBassChange(it.toInt().toShort()) },
+            valueRange = 0f..1000f
+        )
+
+        Spacer(Modifier.height(24.dp))
+
+        // Virtualizer
+        Text("Virtualizer", style = MaterialTheme.typography.titleMedium)
+        Slider(
+            value = state.virtualizer.toFloat(),
+            onValueChange = { vm.onVirtualizerChange(it.toInt().toShort()) },
+            valueRange = 0f..1000f
+        )
+
+        Spacer(Modifier.height(24.dp))
+
+        // Loudness
+        Text("Loudness Enhancer", style = MaterialTheme.typography.titleMedium)
+        Slider(
+            value = state.loudness.toFloat(),
+            onValueChange = { vm.onLoudnessChange(it.toInt()) },
+            valueRange = 0f..1500f
+        )
     }
 }
