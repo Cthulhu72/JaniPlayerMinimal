@@ -18,6 +18,8 @@ Composable
 fun AudioEffectsSettingsScreen(
     onBack: () -> Unit = {}
 ) {
+    val vm: DspViewModel = viewModel(factory = DspViewModelFactory(engine))
+val state by vm.state.collectAsState()
     val context = LocalContext.current
     val dataStore = remember { AudioEffectsDataStore(context) }
 
