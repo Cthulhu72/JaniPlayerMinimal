@@ -3,3 +3,6 @@ SettingsItem(
     icon = Icons.Default.Equalizer,
     onClick = { navController.navigate("audio_effects_settings") }
 )
+composable("audio_effects_settings") {
+    AudioEffectsSettingsScreen()
+}
