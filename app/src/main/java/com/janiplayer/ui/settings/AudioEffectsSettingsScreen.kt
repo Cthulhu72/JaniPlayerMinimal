@@ -14,6 +14,8 @@ import com.janiplayer.audioeffects.AudioEffectsDataStore
 import com.janiplayer.audioeffects.AudioEffectsViewModel
 import com.janiplayer.audioeffects.AudioEffectsMainScreen
 
+app/src/main/java/com/janiplayer/ui/settings/AudioEffectsSettingsScreen.kt
+
 @Composable
 fun AudioEffectsSettingsScreen(
     onBack: () -> Unit = {}
