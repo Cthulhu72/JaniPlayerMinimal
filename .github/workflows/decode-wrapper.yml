@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Decode Base64 to JAR
         run: |
@@ -16,7 +16,7 @@ jobs:
           base64 -d gradle-wrapper.jar.b64 > gradle/wrapper/gradle-wrapper.jar
 
       - name: Upload decoded JAR
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gradle-wrapper-jar
           path: gradle/wrapper/gradle-wrapper.jar
