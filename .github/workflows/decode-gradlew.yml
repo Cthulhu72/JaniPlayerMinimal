@@ -22,3 +22,8 @@ jobs:
 
       - name: List files
         run: ls -l .
+        - name: Decode gradle-wrapper.properties
+        run: |
+          mkdir -p gradle/wrapper
+          base64 -d gradle-wrapper.properties.b64 > gradle/wrapper/gradle-wrapper.properties
+        
