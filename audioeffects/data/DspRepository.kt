@@ -56,7 +56,7 @@ class DspRepository(private val context: Context) {
     }
 }
 
-suspend fun updateEqBands(bands: List<Short>) {
+    suspend fun updateEqBands(bands: List<Short>) {
     dataStore.updateData { config ->
         config.copy(eqBands = bands)
     }
