@@ -1,7 +1,31 @@
 @Composable
 fun AudioEffectsDspUI(vm: DspViewModel) {
     val state by vm.state.collectAsState()
+    var expanded by remember { mutableStateOf(false) }
 
+Text("Preset", style = MaterialTheme.typography.titleMedium)
+
+Box {
+    Button(onClick = { expanded = true }) {
+        Text("Preset kiválasztása")
+    }
+
+    DropdownMenu(
+        expanded = expanded,
+        onDismissRequest = { expanded = false }
+    ) {
+        EqPresets.All.forEach { preset ->
+            DropdownMenuItem(
+                text = { Text(preset.name) },
+                onClick = {
+                    vm.onPresetSelected(preset)
+                    expanded = false
+                }
+            )
+        }
+    }
+}
+    
     Column {
 
         Text("Equalizer", style = MaterialTheme.typography.titleMedium)
