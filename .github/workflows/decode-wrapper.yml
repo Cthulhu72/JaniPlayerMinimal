@@ -1,0 +1,21 @@
+name: Decode Wrapper ZIP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Decode Base64
+        run: |
+          base64 -d wrapper.zip.b64 > wrapper.zip
+
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v3
+        with:
+          name: wrapper-zip
+          path: wrapper.zip
