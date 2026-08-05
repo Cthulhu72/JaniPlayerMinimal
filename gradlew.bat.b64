@@ -1,2 +1,3 @@
-QGVDaG8gb2ZmCkBFRWNobyBvZmYKQGVDaG8gb2ZmCkBFRWNobyBvZmYKQGVDaG8gb2ZmCkBFRWNobyBvZmYK
-QGVDaG8gb2ZmCkBFRWNobyBvZmYKQGVDaG8gb2ZmCkBFRWNobyBvZmYK
+- name: Decode gradlew.bat
+        run: |
+          base64 -d gradlew.bat.b64 > gradlew.bat
