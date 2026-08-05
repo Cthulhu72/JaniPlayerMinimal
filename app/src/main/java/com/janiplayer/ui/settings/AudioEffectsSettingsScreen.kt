@@ -25,6 +25,27 @@ fun AudioEffectsSettingsScreen(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
+
+            Slider(
+    value = state.eqBands[bandIndex].toFloat(),
+    onValueChange = { vm.onEqBandChange(bandIndex, it.toInt().toShort()) },
+    valueRange = -1500f..1500f
+            Slider(
+    value = state.bass.toFloat(),
+    onValueChange = { vm.onBassChange(it.toInt().toShort()) },
+    valueRange = 0f..1000f
+            Slider(
+    value = state.virtualizer.toFloat(),
+    onValueChange = { vm.onVirtualizerChange(it.toInt().toShort()) },
+    valueRange = 0f..1000f
+            Slider(
+    value = state.loudness.toFloat(),
+    onValueChange = { vm.onLoudnessChange(it.toInt()) },
+    valueRange = 0f..1500f
+)
+)
+)
+)
     ) {
 
         Text(
