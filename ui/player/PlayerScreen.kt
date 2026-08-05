@@ -84,3 +84,17 @@ private fun formatTime(ms: Long): String {
     val sec = totalSec % 60
     return "%02d:%02d".format(min, sec)
 }
+LazyColumn {
+    items(playlistViewModel.getPlaylist()) { item ->
+        Text(
+            text = item.mediaMetadata.title.toString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    val index = playlistViewModel.getPlaylist().indexOf(item)
+                    playlistViewModel.playIndex(index)
+                }
+                .padding(8.dp)
+        )
+    }
+}
