@@ -23,20 +23,26 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.ExoPlayer
+import com.janiplayer.audioeffects.AudioEffectsDataStore
 import com.janiplayer.audioeffects.AudioEffectsMainScreen
 import com.janiplayer.audioeffects.AudioEffectsViewModel
-import com.janiplayer.audioeffects.EffectsState
 
 @Composable
 fun PlayerScreen(
     player: ExoPlayer
 ) {
     val audioSessionId = player.audioSessionId
+    val context = LocalContext.current
 
+    // DataStore példány
+    val dataStore = remember { AudioEffectsDataStore(context) }
+
+    // ViewModel példány
     val effectsViewModel = remember(audioSessionId) {
-        AudioEffectsViewModel(audioSessionId)
+        AudioEffectsViewModel(audioSessionId, dataStore)
     }
 
     val effectsState by effectsViewModel.state.collectAsState()
@@ -75,40 +81,3 @@ fun PlayerScreen(
                     targetOffsetY = { it / 2 }
                 ) + fadeOut() + scaleOut(targetScale = 0.95f)
             ) {
-                Surface(
-                    tonalElevation = 6.dp,
-                    shape = MaterialTheme.shapes.large,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(top = 12.dp)
-                ) {
-                    AudioEffectsMainScreen(
-                        state = effectsState,
-                        onBandChange = effectsViewModel::onBandGainChange,
-                        onPresetSelected = effectsViewModel::onPresetSelected,
-                        onBassChange = effectsViewModel::onBassBoostChange,
-                        onVirtualizerChange = effectsViewModel::onVirtualizerChange,
-                        onLoudnessChange = effectsViewModel::onLoudnessChange
-                    )
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun PlayerControls(
-    player: ExoPlayer
-) {
-    // Itt marad a saját Jani Player vezérlő UI-d:
-    // - borítókép
-    // - cím, előadó
-    // - play/pause
-    // - seekbar
-    // - stb.
-}
-val dataStore = AudioEffectsDataStore(LocalContext.current)
-
-val effectsViewModel = remember(audioSessionId) {
-    AudioEffectsViewModel(audioSessionId, dataStore)
-}
