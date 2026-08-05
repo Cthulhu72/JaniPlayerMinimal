@@ -30,10 +30,14 @@ import com.janiplayer.audioeffects.AudioEffectsDataStore
 import com.janiplayer.audioeffects.AudioEffectsMainScreen
 import com.janiplayer.audioeffects.AudioEffectsViewModel
 
+DisposableEffect(Unit) {
+    onDispose { engine.release() }
+}
 @Composable
 fun PlayerScreen(
     player: ExoPlayer
 ) {
+    val engine = remember { AudioEffectsEngine(player.audioSessionId) }
     val audioSessionId = player.audioSessionId
     val context = LocalContext.current
 
