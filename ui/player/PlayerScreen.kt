@@ -2,105 +2,91 @@ package com.janiplayer.ui.player
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.media3.exoplayer.ExoPlayer
-
-navController.navigate("playlist")
+import androidx.media3.common.MediaItem
+import androidx.media3.common.Player
+import coil.compose.rememberAsyncImagePainter
+import com.janiplayer.audioeffects.AudioEffectsEngine
 
 @Composable
-fun PlayerScreen(player: ExoPlayer) {
+fun PlayerScreen(
+    player: Player,
+    engine: AudioEffectsEngine,
+    onBack: () -> Unit,
+    onOpenPlaylist: () -> Unit
+) {
+    val currentItem = player.currentMediaItem
+    val metadata = currentItem?.mediaMetadata
 
-    val vm: PlayerViewModel = viewModel(factory = PlayerViewModelFactory(player))
-    val state by vm.state.collectAsState()
+    val title = metadata?.title?.toString() ?: "Ismeretlen"
+    val artist = metadata?.artist?.toString() ?: ""
+    val artworkUri = metadata?.artworkUri
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
+    var position by remember { mutableStateOf(0L) }
+    var duration by remember { mutableStateOf(player.duration.coerceAtLeast(0L)) }
 
-        // Borító
-        state.artwork?.let { bytes ->
-            val bitmap = androidx.compose.ui.graphics.ImageBitmap.imageFromByteArray(bytes)
-            Image(
-                bitmap = bitmap.asImageBitmap(),
-                contentDescription = null,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(300.dp)
+    // Idő frissítése
+    LaunchedEffect(player) {
+        while (true) {
+            position = player.currentPosition
+            duration = player.duration.coerceAtLeast(0L)
+            kotlinx.coroutines.delay(200)
+        }
+    }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Jani Player") },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(Icons.Default.ArrowBack, null)
+                    }
+                },
+                actions = {
+                    IconButton(onClick = onOpenPlaylist) {
+                        Icon(Icons.Default.QueueMusic, null)
+                    }
+                }
             )
         }
+    ) { padding ->
 
-        Spacer(modifier = Modifier.height(24.dp))
-
-        // Cím + előadó
-        Text(
-            text = state.title,
-            style = MaterialTheme.typography.headlineSmall
-        )
-        Text(
-            text = state.artist,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        // Idő kijelzés
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Text(formatTime(state.position))
-            Text(formatTime(state.duration))
-        }
-
-        // SeekBar
-        Slider(
-            value = state.position.toFloat(),
-            onValueChange = { vm.seekTo(it.toLong()) },
-            valueRange = 0f..state.duration.toFloat(),
-            modifier = Modifier.fillMaxWidth()
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        // Play/Pause
-        Button(
-            onClick = { vm.playPause() },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(if (state.isPlaying) "Pause" else "Play")
-        }
-    }
-}
-
-private fun formatTime(ms: Long): String {
-    val totalSec = ms / 1000
-    val min = totalSec / 60
-    val sec = totalSec % 60
-    return "%02d:%02d".format(min, sec)
-}
-LazyColumn {
-    items(playlistViewModel.getPlaylist()) { item ->
-        Text(
-            text = item.mediaMetadata.title.toString(),
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .clickable {
-                    val index = playlistViewModel.getPlaylist().indexOf(item)
-                    playlistViewModel.playIndex(index)
-                }
-                .padding(8.dp)
-        )
-    }
-}
-val launcher = rememberLauncherForActivityResult(...)
-Button(...)
-val dirLauncher = rememberLauncherForActivityResult(...)
-Button(...)
+                .fillMaxSize()
+                .padding(padding)
+                .padding(16.dp),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            // Borító
+            artworkUri?.let {
+                Image(
+                    painter = rememberAsyncImagePainter(it),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(300.dp)
+                )
+            }
+
+            // Cím + előadó
+            Column {
+                Text(title, style = MaterialTheme.typography.headlineSmall)
+                Text(artist, style = MaterialTheme.typography.bodyMedium)
+            }
+
+            // Seekbar
+            Column {
+                Slider(
+                    value = position.toFloat(),
+                    onValueChange = {
+                        player.seekTo(it.toLong())
+                    },
+                    valueRange = 0f..duration.toFloat()
