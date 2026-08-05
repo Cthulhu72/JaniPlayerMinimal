@@ -13,6 +13,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
+DropdownMenu(
+    expanded = presetExpanded,
+    onDismissRequest = { presetExpanded = false }
+) {
+    state.presets.forEachIndexed { index, preset ->
+        DropdownMenuItem(
+            text = { Text(preset.name) },
+            onClick = {
+                vm.onPresetSelected(index)
+                presetExpanded = false
+            }
+        )
+    }
+}
+
 @Composable
 fun PresetSelector(
     presets: List<String>,
