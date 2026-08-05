@@ -1,22 +1,20 @@
-package com.janiplayer.ui.navigation
+import com.google.accompanist.navigation.animation.AnimatedNavHost
+import com.google.accompanist.navigation.animation.composable
+import androidx.compose.animation.*
 
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import com.janiplayer.ui.player.PlayerScreen
-import com.janiplayer.ui.settings.SettingsScreen
-import com.janiplayer.ui.settings.AudioEffectsSettingsScreen
-import androidx.media3.exoplayer.ExoPlayer
-
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun AppNavHost(
     navController: NavHostController,
     player: ExoPlayer
 ) {
-    NavHost(
+    AnimatedNavHost(
         navController = navController,
-        startDestination = "player"
+        startDestination = "player",
+        enterTransition = { slideInHorizontally { it } + fadeIn() },
+        exitTransition = { slideOutHorizontally { -it } + fadeOut() },
+        popEnterTransition = { slideInHorizontally { -it } + fadeIn() },
+        popExitTransition = { slideOutHorizontally { it } + fadeOut() }
     ) {
         composable("player") {
             PlayerScreen(player = player)
@@ -25,8 +23,8 @@ fun AppNavHost(
         composable("settings") {
             SettingsScreen(
                 onAudioEffectsClick = { navController.navigate("audio_effects_settings") },
-                onThemeClick = { /* később: navController.navigate("theme_settings") */ },
-                onAppInfoClick = { /* később: navController.navigate("app_info") */ }
+                onThemeClick = {},
+                onAppInfoClick = {}
             )
         }
 
