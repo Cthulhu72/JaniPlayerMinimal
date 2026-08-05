@@ -97,3 +97,15 @@ private fun SettingsItem(
         }
     }
 }
+val launcher = rememberLauncherForActivityResult(
+    contract = ActivityResultContracts.OpenMultipleDocuments(),
+    onResult = { uris ->
+        playlistViewModel.addFiles(uris)
+    }
+)
+
+Button(onClick = {
+    launcher.launch(arrayOf("audio/*"))
+}) {
+    Text("Fájlok hozzáadása")
+}
