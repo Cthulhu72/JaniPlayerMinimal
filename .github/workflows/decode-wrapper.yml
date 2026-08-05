@@ -1,4 +1,4 @@
-name: Decode Wrapper ZIP
+name: Decode Wrapper JAR
 
 on:
   workflow_dispatch:
@@ -10,12 +10,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Decode Base64
+      - name: Decode Base64 to JAR
         run: |
-          base64 -d wrapper.zip.b64 > wrapper.zip
+          mkdir -p gradle/wrapper
+          base64 -d gradle-wrapper.jar.b64 > gradle/wrapper/gradle-wrapper.jar
 
-      - name: Upload ZIP
+      - name: Upload decoded JAR
         uses: actions/upload-artifact@v3
         with:
-          name: wrapper-zip
-          path: wrapper.zip
+          name: gradle-wrapper-jar
+          path: gradle/wrapper/gradle-wrapper.jar
