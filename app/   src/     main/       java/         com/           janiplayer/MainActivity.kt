@@ -52,3 +52,13 @@ fun JaniPlayerApp(player: ExoPlayer) {
         )
     }
 }
+player = ExoPlayer.Builder(this).build().apply {
+    addListener(object : Player.Listener {
+        override fun onPlaybackStateChanged(state: Int) {
+            if (state == Player.STATE_ENDED) {
+                seekToNext()
+                play()
+            }
+        }
+    })
+}
