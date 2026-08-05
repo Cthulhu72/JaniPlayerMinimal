@@ -18,6 +18,12 @@ import com.janiplayer.audioeffects.AudioEffectsMainScreen
 fun AudioEffectsSettingsScreen(
     onBack: () -> Unit = {}
 ) {
+    val vm: DspViewModel = viewModel(
+    factory = DspViewModelFactory(
+        engine = engine,
+        repository = DspRepository(context)
+    )
+)
     val context = LocalContext.current
     val dataStore = remember { AudioEffectsDataStore(context) }
 
