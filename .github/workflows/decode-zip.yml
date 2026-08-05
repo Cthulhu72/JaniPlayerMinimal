@@ -6,6 +6,7 @@ on:
 jobs:
   decode:
     runs-on: ubuntu-24.04
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,5 +19,5 @@ jobs:
         run: |
           unzip wrapper.zip -d .
 
-      - name: List
+      - name: List files
         run: ls -R .
