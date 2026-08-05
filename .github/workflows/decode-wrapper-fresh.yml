@@ -1,0 +1,20 @@
+name: Fresh Decode Wrapper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  decode:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Decode Base64
+        run: |
+          mkdir -p gradle/wrapper
+          base64 -d gradle-wrapper.jar.b64 > gradle/wrapper/gradle-wrapper.jar
+
+      - name: List files
+        run: ls -R .
