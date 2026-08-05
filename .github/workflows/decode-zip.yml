@@ -1,0 +1,22 @@
+name: Decode Wrapper ZIP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  decode:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Decode ZIP
+        run: |
+          base64 -d wrapper.zip.b64 > wrapper.zip
+
+      - name: Unzip
+        run: |
+          unzip wrapper.zip -d .
+
+      - name: List
+        run: ls -R .
