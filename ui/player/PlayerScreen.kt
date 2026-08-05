@@ -10,6 +10,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.media3.exoplayer.ExoPlayer
 
+navController.navigate("playlist")
+
 @Composable
 fun PlayerScreen(player: ExoPlayer) {
 
