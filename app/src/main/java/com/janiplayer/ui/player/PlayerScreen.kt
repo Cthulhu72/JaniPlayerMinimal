@@ -107,3 +107,8 @@ fun PlayerControls(
     // - seekbar
     // - stb.
 }
+val dataStore = AudioEffectsDataStore(LocalContext.current)
+
+val effectsViewModel = remember(audioSessionId) {
+    AudioEffectsViewModel(audioSessionId, dataStore)
+}
