@@ -19,8 +19,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Media3 ExoPlayer inicializálás
+        // ExoPlayer inicializálása
         player = ExoPlayer.Builder(this).build().apply {
+            // Ide később a saját fájlkezelésed kerül
             val mediaItem = MediaItem.fromUri("asset:///sample.mp3")
             setMediaItem(mediaItem)
             prepare()
