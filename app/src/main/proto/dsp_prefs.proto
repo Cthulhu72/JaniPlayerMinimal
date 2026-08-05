@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.janiplayer.audioeffects.data";
+option java_multiple_files = true;
+
+message DspPreferences {
+  repeated int32 eqBands = 1;
+  int32 bass = 2;
+  int32 virtualizer = 3;
+  int32 loudness = 4;
+}
