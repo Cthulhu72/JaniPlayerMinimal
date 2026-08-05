@@ -1,0 +1,20 @@
+name: Decode gradlew
+
+on:
+  workflow_dispatch:
+
+jobs:
+  decode:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Decode gradlew
+        run: |
+          base64 -d gradlew.b64 > gradlew
+          chmod +x gradlew
+
+      - name: List files
+        run: ls -l .
