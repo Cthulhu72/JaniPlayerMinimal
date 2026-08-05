@@ -109,3 +109,31 @@ Button(onClick = {
 }) {
     Text("Fájlok hozzáadása")
 }
+val dirLauncher = rememberLauncherForActivityResult(
+    contract = ActivityResultContracts.OpenDocumentTree(),
+    onResult = { uri ->
+        val children = context.contentResolver.query(
+            uri,
+            null,
+            null,
+            null,
+            null
+        )
+
+        val uris = mutableListOf<Uri>()
+        children?.use { cursor ->
+            val col = cursor.getColumnIndexOrThrow(DocumentsContract.Document.COLUMN_DOCUMENT_ID)
+            while (cursor.moveToNext()) {
+                val docId = cursor.getString(col)
+                val childUri = DocumentsContract.buildDocumentUriUsingTree(uri, docId)
+                uris.add(childUri)
+            }
+        }
+
+        playlistViewModel.addDirectory(uris)
+    }
+)
+
+Button(onClick = { dirLauncher.launch(null) }) {
+    Text("Mappa hozzáadása")
+}
