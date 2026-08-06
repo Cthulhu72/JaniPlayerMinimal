@@ -1,0 +1,33 @@
+name: Generate File Structure
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  generate-structure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate file structure
+        run: |
+          echo "# Jani Player – Fájlstruktúra" > FILE_STRUCTURE.md
+          echo "" >> FILE_STRUCTURE.md
+          echo "A projekt teljes fájlstruktúrája automatikusan generálva." >> FILE_STRUCTURE.md
+          echo "" >> FILE_STRUCTURE.md
+          echo '```' >> FILE_STRUCTURE.md
+          find . -type f >> FILE_STRUCTURE.md
+          echo '```' >> FILE_STRUCTURE.md
+
+      - name: Commit file structure
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add FILE_STRUCTURE.md
+          git commit -m "Automatikus fájlstruktúra frissítés"
+          git push
+        continue-on-error: true
