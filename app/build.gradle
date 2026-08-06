@@ -4,48 +4,28 @@ plugins {
 }
 
 android {
-    namespace "com.janiplayer"
+    namespace 'com.janiplayer.minimal'
     compileSdk 34
 
-implementation "androidx.compose.animation:animation:1.6.0"
-implementation "androidx.navigation:navigation-compose:2.7.0"
-implementation "com.google.accompanist:accompanist-navigation-animation:0.32.0"
-    
     defaultConfig {
-        applicationId "com.janiplayer"
-        minSdk 26
+        applicationId "com.janiplayer.minimal"
+        minSdk 24
         targetSdk 34
-
         versionCode 1
-        versionName "1.0.0"
-
-        vectorDrawables.useSupportLibrary = true
-    }
-
-    signingConfigs {
-        release {
-            storeFile file("janiplayer.keystore")
-            storePassword "jelszo"
-            keyAlias "janiplayer"
-            keyPassword "jelszo"
-        }
+        versionName "1.0"
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
-
-            minifyEnabled true
-            shrinkResources true
-
-            proguardFiles getDefaultProguardFile(
-                    "proguard-android-optimize.txt"
-            ), "proguard-rules.pro"
-        }
-
-        debug {
             minifyEnabled false
             shrinkResources false
+            signingConfig signingConfigs.debug
         }
     }
+}
+
+dependencies {
+    implementation 'androidx.compose.animation:animation:1.6.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.activity:activity-compose:1.9.0'
 }
