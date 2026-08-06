@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-12b3781013fbfc1068e0055cd2a1efcde6ec74b4.idx
-./.git/objects/pack/pack-12b3781013fbfc1068e0055cd2a1efcde6ec74b4.pack
-./.git/objects/pack/pack-12b3781013fbfc1068e0055cd2a1efcde6ec74b4.rev
+./.git/objects/pack/pack-05f93705c46c5c552f31755864b0db60372e2992.pack
+./.git/objects/pack/pack-05f93705c46c5c552f31755864b0db60372e2992.rev
+./.git/objects/pack/pack-05f93705c46c5c552f31755864b0db60372e2992.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -85,7 +85,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./gradle-wrapper.properties.b64
 ./viewmodel/PlaylistViewModel.kt
 ./README.md
-./gradle-wrapper.jar.b64
 ./audioeffects/ui/AudioEffectsDspUI.kt
 ./audioeffects/     src/         main/             java/                 com/                     janiplayer/                         audioeffects/AudioEffectsDataStore.kt
 ./audioeffects/     src/         main/AndroidManifest.xml
