@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-825968300d5655a78e89b98894c37fbd905ed570.rev
-./.git/objects/pack/pack-825968300d5655a78e89b98894c37fbd905ed570.idx
-./.git/objects/pack/pack-825968300d5655a78e89b98894c37fbd905ed570.pack
+./.git/objects/pack/pack-209e3404acaa8eebbcd673504bbbf13755452055.pack
+./.git/objects/pack/pack-209e3404acaa8eebbcd673504bbbf13755452055.rev
+./.git/objects/pack/pack-209e3404acaa8eebbcd673504bbbf13755452055.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -46,7 +46,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./FILE_STRUCTURE.md
 ./JaniPlayerMinimal
 ./settings.gradle
-./ui/settings/SettingsScreen.kt
 ./ui/playlist/PlaylistScreen.kt
 ./ui/player/PlayerScreen.kt
 ./ui/player/PlayerViewModelFactory.kt
@@ -61,6 +60,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               settings/AudioEffectsSettingsScreen.kt
 ./app/   src/     main/       java/         com/           janiplayer/viewmodel/PlaylistViewModel.kt
 ./app/   src/     main/       java/         com/           janiplayer/MainActivity.kt
+./app/src/SettingsScreen.kt
 ./app/src/main/proto/dsp_prefs.proto
 ./app/src/main/AndroidManifest.xml
 ./app/src/main/res/values/strings.xml
