@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-331fb525a86da47907fc587a1c4d5491bdfba604.rev
-./.git/objects/pack/pack-331fb525a86da47907fc587a1c4d5491bdfba604.pack
-./.git/objects/pack/pack-331fb525a86da47907fc587a1c4d5491bdfba604.idx
+./.git/objects/pack/pack-257d200bc390dc534e57a27afa641655d6fc07ec.idx
+./.git/objects/pack/pack-257d200bc390dc534e57a27afa641655d6fc07ec.pack
+./.git/objects/pack/pack-257d200bc390dc534e57a27afa641655d6fc07ec.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -61,8 +61,8 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/res/drawable/jani_player_icon.png
 ./app/src/main/java/com/janiplayer/ui/settings/SettingsScreen.kt
 ./app/src/main/java/com/janiplayer/ui/settings/AudioEffectsSettingsScreen.kt
+./app/src/main/java/com/janiplayer/ui/playlist/PlaylistScreen.kt
 ./app/src/main/java/com/janiplayer/ui/player/PlayerScreen.kt
-./app/src/main/java/com/janiplayer/ui/viewmodel/playlist/PlaylistScreen.kt
 ./app/src/main/java/com/janiplayer/ navigation/AppNavHost.kt
 ./app/src/main/java/com/janiplayer/viewmodel/playlist/PlaylistViewModel.kt
 ./app/src/main/java/com/janiplayer/viewmodel/player/PlayerViewModelFactory.kt
