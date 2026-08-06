@@ -1,13 +1,8 @@
 package com.janiplayer.ui.player
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.media3.common.Player
-import androidx.media3.exoplayer.ExoPlayer
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
+import com.janiplayer.viewmodel.player.PlayerViewModel
+import com.janiplayer.viewmodel.player.PlayerState
+import com.janiplayer.viewmodel.player.PlayerViewModelFactory
 
 class PlayerViewModel(
     private val player: ExoPlayer
