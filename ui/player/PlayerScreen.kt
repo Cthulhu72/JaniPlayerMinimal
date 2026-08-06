@@ -13,6 +13,14 @@ import androidx.media3.common.Player
 import coil.compose.rememberAsyncImagePainter
 import com.janiplayer.audioeffects.AudioEffectsEngine
 
+IconButton(onClick = onOpenPlaylist) {
+    Icon(Icons.Default.QueueMusic, null)
+}
+
+IconButton(onClick = onOpenSettings) {
+    Icon(Icons.Default.Settings, null)
+}
+
 IconButton(onClick = { navController.navigate("playlist") }) {
     Icon(Icons.Default.QueueMusic, null)
 }
