@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.janiplayer.minimal'
+    namespace 'com.januplayer.minimal'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.janiplayer.minimal"
+        applicationId "com.januplayer.minimal"
         minSdk 24
         targetSdk 34
         versionCode 1
