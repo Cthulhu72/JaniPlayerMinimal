@@ -1,5 +1,3 @@
-val engine = remember { AudioEffectsEngine(player.audioSessionId) }
-
 package com.janiplayer.ui.player
 
 import androidx.compose.animation.AnimatedVisibility
