@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-- name: Decode gradlew.bat
+      - name: Decode gradlew.bat
         run: |
           base64 -d gradlew.bat.b64 > gradlew.bat
 
