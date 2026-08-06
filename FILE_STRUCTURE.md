@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-0339a44777c3f3e003a2d424c2ce068c5a267af8.pack
-./.git/objects/pack/pack-0339a44777c3f3e003a2d424c2ce068c5a267af8.rev
-./.git/objects/pack/pack-0339a44777c3f3e003a2d424c2ce068c5a267af8.idx
+./.git/objects/pack/pack-3fbbaa8059258b1e1a4cdec4d1c542d437a90a49.rev
+./.git/objects/pack/pack-3fbbaa8059258b1e1a4cdec4d1c542d437a90a49.idx
+./.git/objects/pack/pack-3fbbaa8059258b1e1a4cdec4d1c542d437a90a49.pack
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -60,7 +60,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/res/layout/activity_main.xml
 ./app/src/main/res/drawable/jani_player_icon.png
 ./app/src/main/java/com/janiplayer/viewmodel2/PlayerViewModelFactory.kt
-./app/src/main/java/com/janiplayer/viewmodel2/PlayerState.kt
 ./app/src/main/java/com/janiplayer/viewmodel2/PlaylistViewModel.kt
 ./app/src/main/java/com/janiplayer/ui/settings/SettingsScreen.kt
 ./app/src/main/java/com/janiplayer/ui/settings/AudioEffectsSettingsScreen.kt
@@ -68,6 +67,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/java/com/janiplayer/ui/viewmodel/playlist/PlaylistScreen.kt
 ./app/src/main/java/com/janiplayer/ navigation/AppNavHost.kt
 ./app/src/main/java/com/janiplayer/viewmodel/DUMMY.txt
+./app/src/main/java/com/janiplayer/viewmodel/player/PlayerState.kt
 ./app/src/main/java/com/janiplayer/viewmodel/player/PlayerViewModel.kt
 ./app/src/main/java/com/janiplayer/audioeffects/AudioEffectsEngine.kt
 ./app/src/main/java/com/janiplayer/audioeffects/viewmodel/DspViewModel.kt
