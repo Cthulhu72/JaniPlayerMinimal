@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-0e3ad5c8035ae44582435b611e5bc3b94d91057a.rev
-./.git/objects/pack/pack-0e3ad5c8035ae44582435b611e5bc3b94d91057a.idx
-./.git/objects/pack/pack-0e3ad5c8035ae44582435b611e5bc3b94d91057a.pack
+./.git/objects/pack/pack-02b5c9c778e38a826faebac47fe56630ab63ede5.rev
+./.git/objects/pack/pack-02b5c9c778e38a826faebac47fe56630ab63ede5.idx
+./.git/objects/pack/pack-02b5c9c778e38a826faebac47fe56630ab63ede5.pack
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -47,7 +47,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./JaniPlayerMinimal
 ./settings.gradle
 ./gradlew.bat
-./mipmap-anydpi-v26/ic_launcher.xml
 ./app/build.gradle
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               navigation/AppNavHost.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/playlist/PlaylistScreen.kt
@@ -63,6 +62,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/res/values/ic_launcher_background.xml
 ./app/src/main/res/layout/activity_main.xml
 ./app/src/main/res/drawable/jani_player_icon.png
+./app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
 ./app/src/main/java/com/janiplayer/ui/settings/SettingsScreen.kt
 ./app/src/main/java/com/janiplayer/ui/settings/AudioEffectsSettingsScreen.kt
 ./app/src/main/java/com/janiplayer/ui/playlist/PlaylistScreen.kt
