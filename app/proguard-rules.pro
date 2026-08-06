@@ -1,0 +1,1 @@
+# Jani Player ProGuard rules
