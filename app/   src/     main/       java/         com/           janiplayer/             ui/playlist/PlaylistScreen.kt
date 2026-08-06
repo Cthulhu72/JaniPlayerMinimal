@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.MediaItem
 
-@Composable
+@Comp@Composable
 fun PlaylistScreen(
     playlist: List<MediaItem>,
     currentIndex: Int,
@@ -57,11 +57,4 @@ fun PlaylistScreen(
             }
         }
     }
-}
-
-private fun formatTime(ms: Long): String {
-    val totalSec = ms / 1000
-    val min = totalSec / 60
-    val sec = totalSec % 60
-    return "%02d:%02d".format(min, sec)
 }
