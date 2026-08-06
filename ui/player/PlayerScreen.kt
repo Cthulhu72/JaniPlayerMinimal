@@ -13,6 +13,10 @@ import androidx.media3.common.Player
 import coil.compose.rememberAsyncImagePainter
 import com.janiplayer.audioeffects.AudioEffectsEngine
 
+IconButton(onClick = { navController.navigate("playlist") }) {
+    Icon(Icons.Default.QueueMusic, null)
+}
+
 @Composable
 fun PlayerScreen(
     player: Player,
