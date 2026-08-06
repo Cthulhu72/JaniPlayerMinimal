@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-a1b87435a71826876d7d6c80368f8dffc6282ae1.rev
-./.git/objects/pack/pack-a1b87435a71826876d7d6c80368f8dffc6282ae1.pack
-./.git/objects/pack/pack-a1b87435a71826876d7d6c80368f8dffc6282ae1.idx
+./.git/objects/pack/pack-825968300d5655a78e89b98894c37fbd905ed570.rev
+./.git/objects/pack/pack-825968300d5655a78e89b98894c37fbd905ed570.idx
+./.git/objects/pack/pack-825968300d5655a78e89b98894c37fbd905ed570.pack
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -46,6 +46,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./FILE_STRUCTURE.md
 ./JaniPlayerMinimal
 ./settings.gradle
+./ui/settings/SettingsScreen.kt
 ./ui/playlist/PlaylistScreen.kt
 ./ui/player/PlayerScreen.kt
 ./ui/player/PlayerViewModelFactory.kt
