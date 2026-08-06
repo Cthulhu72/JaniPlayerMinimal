@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-8a8195d32e7ee666fc55fa9f0c732afffb1e4bea.rev
-./.git/objects/pack/pack-8a8195d32e7ee666fc55fa9f0c732afffb1e4bea.pack
-./.git/objects/pack/pack-8a8195d32e7ee666fc55fa9f0c732afffb1e4bea.idx
+./.git/objects/pack/pack-8da92e15594cbcc51f82418f2555d05f32ff37f3.rev
+./.git/objects/pack/pack-8da92e15594cbcc51f82418f2555d05f32ff37f3.pack
+./.git/objects/pack/pack-8da92e15594cbcc51f82418f2555d05f32ff37f3.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -54,6 +54,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               settings/AudioEffectsSettingsScreen.kt
 ./app/   src/     main/       java/         com/           janiplayer/viewmodel/PlaylistViewModel.kt
 ./app/   src/     main/       java/         com/           janiplayer/MainActivity.kt
+./app/proguard-rules.pro
 ./app/src/main/proto/dsp_prefs.proto
 ./app/src/main/AndroidManifest.xml
 ./app/src/main/res/values/strings.xml
