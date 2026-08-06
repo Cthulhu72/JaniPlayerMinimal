@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-1f2f1b3c1de2049c125680a51b3162256f46edc5.rev
-./.git/objects/pack/pack-1f2f1b3c1de2049c125680a51b3162256f46edc5.pack
-./.git/objects/pack/pack-1f2f1b3c1de2049c125680a51b3162256f46edc5.idx
+./.git/objects/pack/pack-6654de0c33066d312943d1d44da0a7ee7196fa57.pack
+./.git/objects/pack/pack-6654de0c33066d312943d1d44da0a7ee7196fa57.idx
+./.git/objects/pack/pack-6654de0c33066d312943d1d44da0a7ee7196fa57.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -60,6 +60,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/proto/dsp_prefs.proto
 ./app/src/main/AndroidManifest.xml
 ./app/src/main/res/values/strings.xml
+./app/src/main/res/values/ic_launcher_background.xml
 ./app/src/main/res/layout/activity_main.xml
 ./app/src/main/res/drawable/jani_player_icon.png
 ./app/src/main/java/com/janiplayer/ui/settings/SettingsScreen.kt
