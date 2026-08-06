@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-83c2981d3814bf11781e1ae10d0ca7e919b3495c.rev
-./.git/objects/pack/pack-83c2981d3814bf11781e1ae10d0ca7e919b3495c.idx
-./.git/objects/pack/pack-83c2981d3814bf11781e1ae10d0ca7e919b3495c.pack
+./.git/objects/pack/pack-12b3781013fbfc1068e0055cd2a1efcde6ec74b4.idx
+./.git/objects/pack/pack-12b3781013fbfc1068e0055cd2a1efcde6ec74b4.pack
+./.git/objects/pack/pack-12b3781013fbfc1068e0055cd2a1efcde6ec74b4.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -46,7 +46,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./FILE_STRUCTURE.md
 ./JaniPlayerMinimal
 ./settings.gradle
-./gradlew.bat
 ./app/build.gradle
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               navigation/AppNavHost.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/playlist/PlaylistScreen.kt
@@ -56,6 +55,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/   src/     main/       java/         com/           janiplayer/MainActivity.kt
 ./app/proguard-rules.pro
 ./app/janiplayer.keystore
+./app/gradlew.bat
 ./app/src/main/proto/dsp_prefs.proto
 ./app/src/main/AndroidManifest.xml
 ./app/src/main/res/values/strings.xml
