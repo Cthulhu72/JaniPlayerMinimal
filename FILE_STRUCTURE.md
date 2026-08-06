@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-f3b650ef58e2cc2c01153f9e0b558c2a33499a9a.rev
-./.git/objects/pack/pack-f3b650ef58e2cc2c01153f9e0b558c2a33499a9a.pack
-./.git/objects/pack/pack-f3b650ef58e2cc2c01153f9e0b558c2a33499a9a.idx
+./.git/objects/pack/pack-ff4d173bcc72eaff13845e5f85871f57d577241d.rev
+./.git/objects/pack/pack-ff4d173bcc72eaff13845e5f85871f57d577241d.pack
+./.git/objects/pack/pack-ff4d173bcc72eaff13845e5f85871f57d577241d.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
