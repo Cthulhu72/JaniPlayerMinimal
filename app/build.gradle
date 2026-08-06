@@ -14,14 +14,34 @@ android {
 
         versionCode 1
         versionName "1.0.0"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("janiplayer.keystore")
+            storePassword "jelszo"
+            keyAlias "janiplayer"
+            keyPassword "jelszo"
+        }
     }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
+
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
-                    'proguard-rules.pro'
+
+            proguardFiles getDefaultProguardFile(
+                    "proguard-android-optimize.txt"
+            ), "proguard-rules.pro"
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
         }
     }
 }
