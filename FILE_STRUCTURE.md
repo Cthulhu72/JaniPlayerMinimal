@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-40fb9186a80d0d301aeab041b142c61117f82c99.idx
-./.git/objects/pack/pack-40fb9186a80d0d301aeab041b142c61117f82c99.rev
-./.git/objects/pack/pack-40fb9186a80d0d301aeab041b142c61117f82c99.pack
+./.git/objects/pack/pack-051222fb35309fc473c5da0b21bf793a041b1570.pack
+./.git/objects/pack/pack-051222fb35309fc473c5da0b21bf793a041b1570.rev
+./.git/objects/pack/pack-051222fb35309fc473c5da0b21bf793a041b1570.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -43,6 +43,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.git/info/exclude
 ./.git/config.worktree
 ./FILE_STRUCTURE.md
+./gradle-wrapper.properties
 ./JaniPlayerMinimal
 ./settings.gradle
 ./gradlew.bat
@@ -78,7 +79,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/java/com/janiplayer/audioeffects/data/DspConfig.kt
 ./app/src/main/java/com/janiplayer/audioeffects/data/DspRepository.kt
 ./java/com/janiplayerminimal/MainActivity.kt
-./gradle/wrapper/gradle-wrapper.properties
 ./viewmodel/PlaylistViewModel.kt
 ./README.md
 ./audioeffects/ui/AudioEffectsDspUI.kt
