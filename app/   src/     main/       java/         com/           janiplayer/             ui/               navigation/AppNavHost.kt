@@ -3,11 +3,14 @@ import com.google.accompanist.navigation.animation.composable
 import androidx.compose.animation.*
 
 composable("playlist") {
+    val vm: PlaylistViewModel = viewModel(factory = PlaylistViewModelFactory(player, context))
+
     PlaylistScreen(
-        playlist = playlistViewModel.getPlaylist(),
+        playlist = vm.playlist.collectAsState().value,
         currentIndex = player.currentMediaItemIndex,
         onItemClick = { index ->
-            playlistViewModel.playIndex(index)
+            vm.playIndex(index)
+            navController.navigate("player")
         }
     )
 }
