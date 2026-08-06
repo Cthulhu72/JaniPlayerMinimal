@@ -26,6 +26,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.ExoPlayer
+import com.janiplayer.viewmodel.player.PlayerViewModel
+import com.janiplayer.viewmodel.player.PlayerState
 import com.janiplayer.audioeffects.AudioEffectsDataStore
 import com.janiplayer.audioeffects.AudioEffectsMainScreen
 import com.janiplayer.audioeffects.AudioEffectsViewModel
