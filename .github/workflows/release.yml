@@ -1,32 +1,26 @@
+name: Build Release
+
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Make gradlew executable
-        run: chmod +x JaniPlayerMinimal/gradlew
+      - uses: actions/checkout@v3
 
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: temurin
+          java-version: 17
 
-      - name: Build Release Apk
-        run: JaniPlayerMinimal/gradlew assembleRelease
+      - name: Build Release
+        run: ./gradlew assembleRelease
 
-      - name: List APK files
-        run: ls -R JaniPlayerMinimal/app/build/outputs/apk/
-
-      - name: Upload Release APK
-        uses: softprops/action-gh-release@v1
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
         with:
-          files: JaniPlayerMinimal/app/build/outputs/apk/release/*.apk
+          name: JaniPlayer-release
+          path: app/build/outputs/apk/release/app-release.apk
