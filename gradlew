@@ -1,3 +1,4 @@
+chmod +x gradlew
 #!/usr/bin/env sh
 
 PRG="$0"
