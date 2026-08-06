@@ -13,9 +13,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
 ./gradlew.b64
-./.git/objects/pack/pack-e77bd2b591c92e23f82ca8d57f4d0ca2fb552b5f.pack
-./.git/objects/pack/pack-e77bd2b591c92e23f82ca8d57f4d0ca2fb552b5f.idx
-./.git/objects/pack/pack-e77bd2b591c92e23f82ca8d57f4d0ca2fb552b5f.rev
+./.git/objects/pack/pack-df6e2d77040cb2ff57170289516cdc40a86dd7b7.rev
+./.git/objects/pack/pack-df6e2d77040cb2ff57170289516cdc40a86dd7b7.idx
+./.git/objects/pack/pack-df6e2d77040cb2ff57170289516cdc40a86dd7b7.pack
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -46,7 +46,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./FILE_STRUCTURE.md
 ./JaniPlayerMinimal
 ./settings.gradle
-./ui/player/PlayerViewModelFactory.kt
 ./gradlew.bat
 ./app/build.gradle
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               navigation/AppNavHost.kt
@@ -61,6 +60,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/res/values/strings.xml
 ./app/src/main/res/layout/activity_main.xml
 ./app/src/main/res/drawable/jani_player_icon.png
+./app/src/main/java/com/janiplayer/viewmodel2/PlayerViewModelFactory.kt
 ./app/src/main/java/com/janiplayer/viewmodel2/PlayerState.kt
 ./app/src/main/java/com/janiplayer/viewmodel2/PlayerViewModel.kt
 ./app/src/main/java/com/janiplayer/ui/settings/SettingsScreen.kt
