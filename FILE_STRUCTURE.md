@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-1a80e481bfb2e14add08a6d4646e0593fb786e60.idx
-./.git/objects/pack/pack-1a80e481bfb2e14add08a6d4646e0593fb786e60.rev
-./.git/objects/pack/pack-1a80e481bfb2e14add08a6d4646e0593fb786e60.pack
+./.git/objects/pack/pack-c0d00126ff5089897e38724092f9e7330e93efbb.pack
+./.git/objects/pack/pack-c0d00126ff5089897e38724092f9e7330e93efbb.rev
+./.git/objects/pack/pack-c0d00126ff5089897e38724092f9e7330e93efbb.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -77,7 +77,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/java/com/janiplayer/audioeffects/viewmodel/DspViewModelFactory.kt
 ./app/src/main/java/com/janiplayer/audioeffects/data/DspConfig.kt
 ./app/src/main/java/com/janiplayer/audioeffects/data/DspRepository.kt
-./app/gradlew
 ./java/com/janiplayerminimal/MainActivity.kt
 ./gradle/wrapper/gradle-wrapper.properties
 ./viewmodel/PlaylistViewModel.kt
@@ -99,4 +98,5 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./audioeffects/data/DspRepository.kt
 ./audioeffects/data/DspPreferencesSerializer.kt
 ./audioeffects/data/EqPresets.kt
+./gradlew
 ```
