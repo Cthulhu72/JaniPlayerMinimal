@@ -1,3 +1,17 @@
+buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.6.0"
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
