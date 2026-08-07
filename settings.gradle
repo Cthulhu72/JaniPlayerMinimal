@@ -1,2 +1,2 @@
-rootProject.name = "JanuPlayerMinimal"
+rootProject.name = "JaniPlayerMinimal"
 include(":app")
