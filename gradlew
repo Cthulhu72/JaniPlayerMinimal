@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# ------------------------------------------------------------
+# Rövid Gradle Wrapper Script – Mobil/Codespaces kompatibilis
+# ------------------------------------------------------------
+
 PRG="$0"
 while [ -h "$PRG" ] ; do
     ls=`ls -ld "$PRG"`
@@ -10,6 +14,7 @@ while [ -h "$PRG" ] ; do
         PRG=`dirname "$PRG"`"/$link"
     fi
 done
+
 SAVED="`pwd`"
 cd "`dirname \"$PRG\"`/" >/dev/null
 APP_HOME="`pwd -P`"
@@ -18,10 +23,10 @@ cd "$SAVED" >/dev/null
 APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
-DEFAULT_JVM_OPTS="'-Xmx512m -Xms256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8'"
+# JVM memória – idézőjelek nélkül
+DEFAULT_JVM_OPTS='-Xmx512m -Xms256m'
 
-MAX_FD="maximum"
-
+# OS detektálás
 cygwin=false
 msys=false
 darwin=false
@@ -33,8 +38,10 @@ case "`uname`" in
   NONSTOP* ) nonstop=true ;;
 esac
 
+# Wrapper JAR
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
+# Java keresése
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
         JAVACMD="$JAVA_HOME/jre/sh/java"
@@ -53,4 +60,5 @@ else
     }
 fi
 
-exec "$JAVACMD" -Xmx512m -Xms256m -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
+# Gradle Wrapper indítása – EZ A LÉNYEG
+exec "$JAVACMD" $DEFAULT_JVM_OPTS -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
