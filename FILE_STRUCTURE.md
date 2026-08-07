@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-c94899efa40a5bd7b18f9853e7dbc4c0e18f45df.rev
-./.git/objects/pack/pack-c94899efa40a5bd7b18f9853e7dbc4c0e18f45df.idx
-./.git/objects/pack/pack-c94899efa40a5bd7b18f9853e7dbc4c0e18f45df.pack
+./.git/objects/pack/pack-1bc628a34039d29aa0e4dabeac9d3f88a8e5704d.pack
+./.git/objects/pack/pack-1bc628a34039d29aa0e4dabeac9d3f88a8e5704d.idx
+./.git/objects/pack/pack-1bc628a34039d29aa0e4dabeac9d3f88a8e5704d.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
