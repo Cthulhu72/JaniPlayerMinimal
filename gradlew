@@ -53,6 +53,4 @@ else
     }
 fi
 
-exec "$JAVACMD" $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS \
-  -classpath "$CLASSPATH" \
-  org.gradle.wrapper.GradleWrapperMain "$@"
+exec "$JAVACMD" -Xmx512m -Xms256m -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
