@@ -8,7 +8,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.janiplayer.minimal"
+        applicationId 'com.janiplayer.minimal'
         minSdk 24
         targetSdk 34
         versionCode 1
