@@ -5,8 +5,8 @@
     android:icon="@mipmap/ic_launcher"
     
     <application
-    android:label="Jani Player Minimal"
-    android:icon="@drawable/jani_player_icon"
+        android:label="MirAI Player"
+        android:icon="@drawable/jani_player_icon"
         android:theme="@style/Theme.Material3.DayNight.NoActionBar">
 
         <activity
