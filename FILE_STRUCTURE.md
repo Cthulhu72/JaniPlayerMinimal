@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-1da54d9b8b0a981aa69ff0a2eb240b59d7120c58.pack
-./.git/objects/pack/pack-1da54d9b8b0a981aa69ff0a2eb240b59d7120c58.rev
-./.git/objects/pack/pack-1da54d9b8b0a981aa69ff0a2eb240b59d7120c58.idx
+./.git/objects/pack/pack-0657b7f851b89f3699e566990505c637f80a58bc.idx
+./.git/objects/pack/pack-0657b7f851b89f3699e566990505c637f80a58bc.pack
+./.git/objects/pack/pack-0657b7f851b89f3699e566990505c637f80a58bc.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -61,6 +61,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/res/values/strings.xml
 ./app/src/main/res/values/ic_launcher_background.xml
 ./app/src/main/res/layout/activity_main.xml
+./app/src/main/res/drawable/ic_launcher_foreground.png
 ./app/src/main/res/drawable/+++(((
 ./app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
 ./app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
