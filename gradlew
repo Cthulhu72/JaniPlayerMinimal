@@ -10,9 +10,9 @@ while [ -h "$PRG" ] ; do
         PRG=`dirname "$PRG"`"/$link"
     fi
 done
-SAVED="`pwd`"
+SAVED=`pwd`
 cd "`dirname \"$PRG\"`/" >/dev/null
-APP_HOME="`pwd -P`"
+APP_HOME=`pwd -P`
 cd "$SAVED" >/dev/null
 
 APP_NAME="Gradle"
@@ -26,7 +26,7 @@ cygwin=false
 msys=false
 darwin=false
 nonstop=false
-case "`uname`" in
+case `uname` in
   CYGWIN* ) cygwin=true ;;
   Darwin* ) darwin=true ;;
   MINGW* ) msys=true ;;
