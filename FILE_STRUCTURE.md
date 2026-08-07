@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-eea4fad7ee9ed43b13c7c692aeba04eea4a7d0d9.pack
-./.git/objects/pack/pack-eea4fad7ee9ed43b13c7c692aeba04eea4a7d0d9.idx
-./.git/objects/pack/pack-eea4fad7ee9ed43b13c7c692aeba04eea4a7d0d9.rev
+./.git/objects/pack/pack-f4440335d5b809c3e2892be11b2c4c60fecb6843.rev
+./.git/objects/pack/pack-f4440335d5b809c3e2892be11b2c4c60fecb6843.pack
+./.git/objects/pack/pack-f4440335d5b809c3e2892be11b2c4c60fecb6843.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -61,7 +61,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/res/values/strings.xml
 ./app/src/main/res/values/ic_launcher_background.xml
 ./app/src/main/res/layout/activity_main.xml
-./app/src/main/res/drawable/ic_launcher_foreground.png
 ./app/src/main/res/drawable/jani_player_icon.png
 ./app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
 ./app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
