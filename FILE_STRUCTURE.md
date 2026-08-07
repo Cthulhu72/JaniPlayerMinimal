@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-0657b7f851b89f3699e566990505c637f80a58bc.idx
-./.git/objects/pack/pack-0657b7f851b89f3699e566990505c637f80a58bc.pack
-./.git/objects/pack/pack-0657b7f851b89f3699e566990505c637f80a58bc.rev
+./.git/objects/pack/pack-390bd7628e4cec19b7460171dc61408377ba8b92.idx
+./.git/objects/pack/pack-390bd7628e4cec19b7460171dc61408377ba8b92.pack
+./.git/objects/pack/pack-390bd7628e4cec19b7460171dc61408377ba8b92.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -62,7 +62,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/res/values/ic_launcher_background.xml
 ./app/src/main/res/layout/activity_main.xml
 ./app/src/main/res/drawable/ic_launcher_foreground.png
-./app/src/main/res/drawable/+++(((
 ./app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
 ./app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
 ./app/src/main/java/com/janiplayer/ui/settings/SettingsScreen.kt
