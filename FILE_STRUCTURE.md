@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-420cd0fbceef3dafbbd106c534d765e9633c34d3.rev
-./.git/objects/pack/pack-420cd0fbceef3dafbbd106c534d765e9633c34d3.pack
-./.git/objects/pack/pack-420cd0fbceef3dafbbd106c534d765e9633c34d3.idx
+./.git/objects/pack/pack-8fb5312914a3a2bae1a3bf81b26da3f50e5a79a9.pack
+./.git/objects/pack/pack-8fb5312914a3a2bae1a3bf81b26da3f50e5a79a9.rev
+./.git/objects/pack/pack-8fb5312914a3a2bae1a3bf81b26da3f50e5a79a9.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -100,6 +100,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./com/janiplayer/video/ui/OptimizedPlayerView.kt
 ./com/janiplayer/video/ui/FullscreenController.kt
 ./com/janiplayer/video/player/OptimizedPlayer.kt
+./com/janiplayer/video/player/VideoSource.kt
 ./com/janiplayer/video/viewmodel/PositionState.kt
 ./com/janiplayer/navigation/AppNavGraph.kt
 ./com/janiplayer/data/playlist/PlaylistRepository.kt
