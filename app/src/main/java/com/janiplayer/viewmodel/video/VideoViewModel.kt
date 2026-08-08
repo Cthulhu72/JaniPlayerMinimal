@@ -71,6 +71,18 @@ Box(
     }
 }
 // CONTROLS OVERLAY
+val alpha by animateFloatAsState(
+    targetValue = if (viewModel.controlsVisible) 1f else 0f,
+    animationSpec = tween(durationMillis = 250)
+)
+
+Box(
+    modifier = Modifier
+        .fillMaxSize()
+        .align(Alignment.Center)
+        .padding(24.dp)
+        .alpha(alpha)
+
 if (viewModel.controlsVisible) {
     Box(
         modifier = Modifier
@@ -148,6 +160,12 @@ if (viewModel.controlsVisible) {
     }
 }
 
+fun formatTime(ms: Long): String {
+    val totalSeconds = ms / 1000
+    val minutes = totalSeconds / 60
+    val seconds = totalSeconds % 60
+    return "%d:%02d".format(minutes, seconds)
+}
 class VideoViewModel(
     val player: Player
 ) : ViewModel() {
