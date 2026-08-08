@@ -27,20 +27,20 @@ fun VideoPlayerScreen(viewModel: VideoViewModel) {
 
             if (viewModel.isBuffering) {
             CircularProgressIndicator(
-            modifier = Modifier
-            .align(Alignment.Center)
-            .size(48.dp)
+                 modifier = Modifier
+                 .align(Alignment.Center)
+                 .size(48.dp)
 
             if (viewModel.isError) {
-        Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .align(Alignment.Center)
+                 Box(
+                    modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.Center)
     ) {
-        Text(
-            text = "Hiba történt a videó lejátszásában",
-            color = Color.Red,
-            modifier = Modifier.align(Alignment.Center)
+                 Text(
+                    text = "Hiba történt a videó lejátszásában",
+                    color = Color.Red,
+                    modifier = Modifier.align(Alignment.Center)
         )
     }
 }
