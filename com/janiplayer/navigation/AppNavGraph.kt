@@ -1,4 +1,4 @@
-composable("video/{path}") { backStack ->
+composable("audio/{path}") { backStack ->
     val path = backStack.arguments?.getString("path")!!
-    VideoPlayerScreen(context = context, path = path)
+    AudioPlayerScreen(context = context, path = path)
 }
