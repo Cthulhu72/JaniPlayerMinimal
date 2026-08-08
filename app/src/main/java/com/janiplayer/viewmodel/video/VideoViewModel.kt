@@ -30,7 +30,7 @@ Box(
                     viewModel.toggleControls()
                     
          .pointerInput(Unit) {
-    de       tectVerticalDragGestures(
+             detectVerticalDragGestures(
                  onVerticalDrag = { change, dragAmount ->
                     if (change.position.x < size.width / 2f) {
                 // BAL OLDAL → fényerő
