@@ -19,6 +19,13 @@ fun VideoPlayerScreen(viewModel: VideoViewModel) {
         modifier = Modifier.fillMaxSize()
     ) {
 
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+) {
+    // Itt lesz majd a videó SurfaceView / PlayerView
+}
         // Itt lesz majd a videó SurfaceView / PlayerView
         Box(
             modifier = Modifier
