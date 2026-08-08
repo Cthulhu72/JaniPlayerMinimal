@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-42c6a903892bb0d74cc4e8bef8d7a4266b6ef65f.idx
-./.git/objects/pack/pack-42c6a903892bb0d74cc4e8bef8d7a4266b6ef65f.rev
-./.git/objects/pack/pack-42c6a903892bb0d74cc4e8bef8d7a4266b6ef65f.pack
+./.git/objects/pack/pack-f15cbcc7cdeec6514e2d592c3f11ced773075ebb.idx
+./.git/objects/pack/pack-f15cbcc7cdeec6514e2d592c3f11ced773075ebb.pack
+./.git/objects/pack/pack-f15cbcc7cdeec6514e2d592c3f11ced773075ebb.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -88,6 +88,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/java/com/janiplayer/audioeffects/data/DspRepository.kt
 ./com/janiplayer/audio/dsp/AudioEffects.kt
 ./com/janiplayer/audio/dsp/EqPresetCache.kt
+./com/janiplayer/audio/ui/AudioPlayerScreen.kt
 ./com/janiplayer/audio/player/OptimizedAudioPlayer.kt
 ./com/janiplayer/audio/viewmodel/AudioViewModel.kt
 ./com/janiplayer/filemanager/FileManagerScreen.kt
