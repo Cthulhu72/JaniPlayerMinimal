@@ -89,6 +89,13 @@ class VideoViewModel(
     
     fun toggleFullscreen() {
         isFullscreen = !isFullscreen
+        
+    fun adjustVolume(amount: Float) {
+    // TODO: Media3 VolumeControl vagy AudioManager
+}
+    fun adjustBrightness(amount: Float) {
+    // TODO: Window attributes
+}
     
     init {
         player.addListener(object : Player.Listener {
