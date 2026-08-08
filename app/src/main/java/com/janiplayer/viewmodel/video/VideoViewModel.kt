@@ -25,6 +25,7 @@ class VideoViewModel(
     var controlsVisible by mutableStateOf(true)
     
     var isFullscreen by mutableStateOf(false)
+    
     fun toggleFullscreen() {
         isFullscreen = !isFullscreen
     
