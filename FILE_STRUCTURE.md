@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-a3f86cb3d6d20afc4dd2e97f80d26bd43ce61adf.idx
-./.git/objects/pack/pack-a3f86cb3d6d20afc4dd2e97f80d26bd43ce61adf.pack
-./.git/objects/pack/pack-a3f86cb3d6d20afc4dd2e97f80d26bd43ce61adf.rev
+./.git/objects/pack/pack-76e5802dbbb3cbdbbfbbcdd048fc1f1e030d7479.pack
+./.git/objects/pack/pack-76e5802dbbb3cbdbbfbbcdd048fc1f1e030d7479.idx
+./.git/objects/pack/pack-76e5802dbbb3cbdbbfbbcdd048fc1f1e030d7479.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -95,6 +95,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./audioeffects/build.gradle.kts
 ./audioeffects/src/main/java/com/janiplayer/audioeffect/PresetSelector.kt
 ./audioeffects/src/main/java/com/janiplayer/audioeffects/EffectSlider.kt
+./audioeffects/src/main/java/com/janiplayer/audioeffects/VideoPlayerScreen.kt
 ./audioeffects/src/main/java/com/janiplayer/audioeffects/AudioEffectsMainScreen.kt
 ./audioeffects/src/main/java/com/janiplayer/audioeffects/AnimatedAudioEffectsPanel.kt
 ./audioeffects/src/main/java/com/janiplayer/audioeffects/EqualizerBandSlider.kt
