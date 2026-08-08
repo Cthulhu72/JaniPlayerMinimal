@@ -28,6 +28,20 @@ Box(
                 },
                 onTap = {
                     viewModel.toggleControls()
+                    
+         .pointerInput(Unit) {
+    de       tectVerticalDragGestures(
+                 onVerticalDrag = { change, dragAmount ->
+                    if (change.position.x < size.width / 2f) {
+                // BAL OLDAL → fényerő
+                       viewModel.adjustBrightness(dragAmount)
+                    } else {
+                // JOBB OLDAL → hangerő
+                       viewModel.adjustVolume(dragAmount)
+            }
+        }
+    )
+                    }
                 }
             )
         }
