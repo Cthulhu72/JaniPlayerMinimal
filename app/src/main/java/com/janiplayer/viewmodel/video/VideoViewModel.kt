@@ -23,8 +23,11 @@ class VideoViewModel(
     var isError by mutableStateOf(false)
 
     var controlsVisible by mutableStateOf(true)
+    
     var isFullscreen by mutableStateOf(false)
-
+    fun toggleFullscreen() {
+        isFullscreen = !isFullscreen
+    
     init {
         player.addListener(object : Player.Listener {
 
