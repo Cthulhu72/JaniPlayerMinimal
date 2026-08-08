@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-76e5802dbbb3cbdbbfbbcdd048fc1f1e030d7479.pack
-./.git/objects/pack/pack-76e5802dbbb3cbdbbfbbcdd048fc1f1e030d7479.idx
-./.git/objects/pack/pack-76e5802dbbb3cbdbbfbbcdd048fc1f1e030d7479.rev
+./.git/objects/pack/pack-2928446b0eb03b5a733d300893e69a570af38968.rev
+./.git/objects/pack/pack-2928446b0eb03b5a733d300893e69a570af38968.pack
+./.git/objects/pack/pack-2928446b0eb03b5a733d300893e69a570af38968.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -52,6 +52,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/   src/     main/       java/         com/           janiplayer/             ui/playlist/PlaylistScreen.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               settings/SettingsScreen.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               settings/AudioEffectsSettingsScreen.kt
+./app/   src/     main/       java/         com/           janiplayer/viewmodel/video/VideoViewModel.kt
 ./app/   src/     main/       java/         com/           janiplayer/viewmodel/PlaylistViewModel.kt
 ./app/   src/     main/       java/         com/           janiplayer/MainActivity.kt
 ./app/proguard-rules.pro
