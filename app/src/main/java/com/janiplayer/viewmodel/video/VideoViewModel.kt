@@ -10,6 +10,53 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
+Box(
+    modifier = Modifier
+        .fillMaxWidth()
+        .weight(1f)
+        .pointerInput(Unit) {
+            detectTapGestures(
+                onDoubleTap = { offset ->
+                    val width = size.width
+                    if (offset.x < width / 2f) {
+                        // BAL OLDAL → vissza 10 másodpercet
+                        viewModel.player.seekBack()
+                    } else {
+                        // JOBB OLDAL → előre 10 másodpercet
+                        viewModel.player.seekForward()
+                    }
+                },
+                onTap = {
+                    viewModel.toggleControls()
+                }
+            )
+        }
+) {
+    // VideoSurface(player = viewModel.player)
+
+    if (viewModel.isBuffering) {
+        CircularProgressIndicator(
+            modifier = Modifier
+                .align(Alignment.Center)
+                .size(48.dp)
+        )
+    }
+
+    if (viewModel.isError) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .align(Alignment.Center)
+        ) {
+            Text(
+                text = "Hiba történt a videó lejátszásában",
+                color = Color.Red,
+                modifier = Modifier.align(Alignment.Center)
+            )
+        }
+    }
+}
+
 class VideoViewModel(
     val player: Player
 ) : ViewModel() {
@@ -55,8 +102,13 @@ class VideoViewModel(
         }
     }
 
-    fun toggleControls() {
+        var controlsVisible by mutableStateO
+        
+        fun toggleControls() {
         controlsVisible = !controlsVisible
+            if (viewModel.controlsVisible) {
+    // Play/pause, fullscreen, idő kijelzés stb.
+            }
     }
 
     fun toggleFullscreen() {
