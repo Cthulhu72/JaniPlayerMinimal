@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-c0a0a60046b74af7548dec5033a91b9533720a44.rev
-./.git/objects/pack/pack-c0a0a60046b74af7548dec5033a91b9533720a44.idx
-./.git/objects/pack/pack-c0a0a60046b74af7548dec5033a91b9533720a44.pack
+./.git/objects/pack/pack-5eb0a2c7553361aee256548dd71793433566a4f0.pack
+./.git/objects/pack/pack-5eb0a2c7553361aee256548dd71793433566a4f0.idx
+./.git/objects/pack/pack-5eb0a2c7553361aee256548dd71793433566a4f0.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -86,6 +86,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/java/com/janiplayer/audioeffects/viewmodel/DspViewModelFactory.kt
 ./app/src/main/java/com/janiplayer/audioeffects/data/DspConfig.kt
 ./app/src/main/java/com/janiplayer/audioeffects/data/DspRepository.kt
+./com/janiplayer/filemanager/FileManagerScreen.kt
 ./com/janiplayer/ui/audio/AudioPlayerScreen.kt
 ./com/janiplayer/ui/settings/SettingsScreen.kt
 ./com/janiplayer/ui/util/Interactions.kt
