@@ -11,6 +11,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
 Box(
+    AndroidView(
+    modifier = Modifier.fillMaxSize(),
+    factory = { context ->
+        PlayerView(context).apply {
+            player = viewModel.player
+            useController = false   // saját overlay-t használunk
+        }
+    },
+    update = { view ->
+        view.player = viewModel.player
+    }
+)
     modifier = Modifier
         .fillMaxWidth()
         .weight(1f)
