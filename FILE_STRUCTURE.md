@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-a9cb9ab9285d64cf1f5e090fad7c06524d7f8fa4.idx
-./.git/objects/pack/pack-a9cb9ab9285d64cf1f5e090fad7c06524d7f8fa4.pack
-./.git/objects/pack/pack-a9cb9ab9285d64cf1f5e090fad7c06524d7f8fa4.rev
+./.git/objects/pack/pack-bf472f3f65f089526218d4c976f5fcad26f4aa58.rev
+./.git/objects/pack/pack-bf472f3f65f089526218d4c976f5fcad26f4aa58.pack
+./.git/objects/pack/pack-bf472f3f65f089526218d4c976f5fcad26f4aa58.idx
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -47,7 +47,6 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./JaniPlayerMinimal
 ./settings.gradle
 ./gradlew.bat
-./usr/lib/Ggggggg
 ./app/build.gradle
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               navigation/AppNavHost.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/playlist/PlaylistScreen.kt
@@ -86,6 +85,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./local.properties
 ./viewmodel/PlaylistViewModel.kt
 ./README.md
+./android home_/usr/lib/Ggggggg
 ./audioeffects/ui/AudioEffectsDspUI.kt
 ./audioeffects/     src/         main/             java/                 com/                     janiplayer/                         audioeffects/AudioEffectsDataStore.kt
 ./audioeffects/     src/         main/AndroidManifest.xml
