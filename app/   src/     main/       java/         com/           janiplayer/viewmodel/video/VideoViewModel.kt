@@ -13,7 +13,21 @@ import androidx.compose.runtime.setValue
 class VideoViewModel(
     val player: Player
 ) : ViewModel() {
-
+    LaunchedEffect(player) {
+    LaunchedEffect(viewModel.controlsVisible) {
+    if (viewModel.controlsVisible) {
+        delay(3000)
+        viewModel.controlsVisible = false
+    }
+}
+        
+    while (true) {
+        currentPosition = player.currentPosition
+        bufferedPosition = player.bufferedPosition
+        duration = player.duration
+        delay(100L)
+    }
+    }
     var currentPosition by mutableStateOf(0L)
     var bufferedPosition by mutableStateOf(0L)
     var duration by mutableStateOf(0L)
@@ -28,6 +42,20 @@ class VideoViewModel(
     init {
         player.addListener(object : Player.Listener {
 
+          override fun onPlaybackStateChanged(state: Int) {
+            isBuffering = state == Player.STATE_BUFFERING
+        }
+
+          override fun onPlayerError(error: PlaybackException) {
+            isError = true
+        }
+    })
+    }
+           override fun onCleared() {
+           super.onCleared()
+                player.release()
+            }
+        
             override fun onPlaybackStateChanged(state: Int) {
                 isBuffering = state == Player.STATE_BUFFERING
                 isError = state == Player.STATE_IDLE || state == Player.STATE_ENDED
