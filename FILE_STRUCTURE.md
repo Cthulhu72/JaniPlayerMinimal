@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-e1d1068d18473fa41214bcf0982377dac3443a62.idx
-./.git/objects/pack/pack-e1d1068d18473fa41214bcf0982377dac3443a62.rev
-./.git/objects/pack/pack-e1d1068d18473fa41214bcf0982377dac3443a62.pack
+./.git/objects/pack/pack-6502e0be5f296c3944251d04dec72c917b3a9dad.idx
+./.git/objects/pack/pack-6502e0be5f296c3944251d04dec72c917b3a9dad.rev
+./.git/objects/pack/pack-6502e0be5f296c3944251d04dec72c917b3a9dad.pack
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -49,6 +49,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./gradlew.bat
 ./app/build.gradle
 ./app/   src/     main/       java/         com/janiplayer/ui/video/VideoPlayerScreen.kt
+./app/   src/     main/       java/         com/           janiplayer/filemanager/FileScanner.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               navigation/AppNavHost.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/playlist/PlaylistScreen.kt
 ./app/   src/     main/       java/         com/           janiplayer/             ui/               settings/SettingsScreen.kt
