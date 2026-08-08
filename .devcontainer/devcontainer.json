@@ -1,7 +1,0 @@
-{
-  "name": "Android SDK Container",
-  "image": "mcr.microsoft.com/devcontainers/java:21",
-  "features": {
-    "android": "latest"
-  }
-}
