@@ -24,7 +24,17 @@ fun VideoPlayerScreen(viewModel: VideoViewModel) {
                 .fillMaxWidth()
                 .weight(1f)
 ) {
-    // Itt lesz majd a videó SurfaceView / PlayerView
+    // IDE KELL BEÍRNI – VideoPlayerScreen.kt
+// A videót tartalmazó Box BELSEJÉBE
+
+if (viewModel.isBuffering) {
+    CircularProgressIndicator(
+        modifier = Modifier
+            .align(Alignment.Center)
+            .size(48.dp)
+    )
+}
+            // Itt lesz majd a videó SurfaceView / PlayerView
 }
         // Itt lesz majd a videó SurfaceView / PlayerView
         Box(
