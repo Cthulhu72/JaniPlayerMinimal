@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-fbcb0fb39877e294381126571a652379d0ac8485.idx
-./.git/objects/pack/pack-fbcb0fb39877e294381126571a652379d0ac8485.pack
-./.git/objects/pack/pack-fbcb0fb39877e294381126571a652379d0ac8485.rev
+./.git/objects/pack/pack-a3f86cb3d6d20afc4dd2e97f80d26bd43ce61adf.idx
+./.git/objects/pack/pack-a3f86cb3d6d20afc4dd2e97f80d26bd43ce61adf.pack
+./.git/objects/pack/pack-a3f86cb3d6d20afc4dd2e97f80d26bd43ce61adf.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -70,6 +70,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./app/src/main/java/com/janiplayer/ui/player/PlayerScreen.kt
 ./app/src/main/java/com/janiplayer/ navigation/AppNavHost.kt
 ./app/src/main/java/com/janiplayer/viewmodel/playlist/PlaylistViewModel.kt
+./app/src/main/java/com/janiplayer/viewmodel/video/VideoViewModel.kt
 ./app/src/main/java/com/janiplayer/viewmodel/player/PlayerViewModelFactory.kt
 ./app/src/main/java/com/janiplayer/viewmodel/player/PlayerState.kt
 ./app/src/main/java/com/janiplayer/viewmodel/player/PlayerViewModel.kt
