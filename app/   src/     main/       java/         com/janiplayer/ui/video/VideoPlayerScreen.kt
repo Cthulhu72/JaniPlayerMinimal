@@ -24,14 +24,26 @@ fun VideoPlayerScreen(viewModel: VideoViewModel) {
                 .fillMaxWidth()
                 .weight(1f)
 ) {
-    // IDE KELL BEÍRNI – VideoPlayerScreen.kt
-// A videót tartalmazó Box BELSEJÉBE
 
-if (viewModel.isBuffering) {
-    CircularProgressIndicator(
-        modifier = Modifier
+            if (viewModel.isBuffering) {
+            CircularProgressIndicator(
+            modifier = Modifier
             .align(Alignment.Center)
             .size(48.dp)
+
+            if (viewModel.isError) {
+        Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .align(Alignment.Center)
+    ) {
+        Text(
+            text = "Hiba történt a videó lejátszásában",
+            color = Color.Red,
+            modifier = Modifier.align(Alignment.Center)
+        )
+    }
+}
     )
 }
             // Itt lesz majd a videó SurfaceView / PlayerView
