@@ -1,19 +1,46 @@
 // IDE KELL BEÍRNI – VideoPlayerScreen.kt
 // A meglévő Slider helyére EZT kell tenni
 
-var dragPosition by remember { mutableStateOf<Long?>(null) }
+package com.janiplayer.ui.video
 
-Slider(
-    value = (dragPosition ?: viewModel.currentPosition).toFloat(),
-    onValueChange = { newValue ->
-        dragPosition = newValue.toLong()
-    },
-    onValueChangeFinished = {
-        dragPosition?.let { finalPos ->
-            viewModel.player.seekTo(finalPos)
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.janiplayer.viewmodel.video.VideoViewModel
+
+@Composable
+fun VideoPlayerScreen(viewModel: VideoViewModel) {
+
+    var dragPosition by remember { mutableStateOf<Long?>(null) }
+
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+
+        // Itt lesz majd a videó SurfaceView / PlayerView
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        ) {
+            // VideoSurface(player = viewModel.player)
         }
-        dragPosition = null
-    },
-    valueRange = 0f..viewModel.duration.toFloat(),
-    modifier = Modifier.fillMaxWidth()
-)
+
+        // SEEK BAR DRAG LOGIKA – IDE KELL TENNI
+        Slider(
+            value = (dragPosition ?: viewModel.currentPosition).toFloat(),
+            onValueChange = { newValue ->
+                dragPosition = newValue.toLong()
+            },
+            onValueChangeFinished = {
+                dragPosition?.let { finalPos ->
+                    viewModel.player.seekTo(finalPos)
+                }
+                dragPosition = null
+            },
+            valueRange = 0f..viewModel.duration.toFloat(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
