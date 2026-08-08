@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-2f94d5f29f8f3e6c28f65c5547be0dcd36ee405b.rev
-./.git/objects/pack/pack-2f94d5f29f8f3e6c28f65c5547be0dcd36ee405b.pack
-./.git/objects/pack/pack-2f94d5f29f8f3e6c28f65c5547be0dcd36ee405b.idx
+./.git/objects/pack/pack-0225b0c876ae77d3ed79dd4a20796825b3a73da7.rev
+./.git/objects/pack/pack-0225b0c876ae77d3ed79dd4a20796825b3a73da7.idx
+./.git/objects/pack/pack-0225b0c876ae77d3ed79dd4a20796825b3a73da7.pack
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -95,6 +95,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./com/janiplayer/ui/theme/Theme.kt
 ./com/janiplayer/ui/components/JaniListItem.kt
 ./com/janiplayer/video/ui/VideoOverlay.kt
+./com/janiplayer/video/ui/VideoPlayerScreen.kt
 ./com/janiplayer/video/ui/PlayerLifecycleFix.kt
 ./com/janiplayer/video/ui/OptimizedPlayerView.kt
 ./com/janiplayer/video/ui/FullscreenController.kt
