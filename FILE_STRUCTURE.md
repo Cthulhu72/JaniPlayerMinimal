@@ -12,9 +12,9 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./.github/workflows/decode-wrapper-fresh.yml
 ./.github/workflows/decode-gradlew.yml
 ./v1.0
-./.git/objects/pack/pack-6abd7912dfc3b2a6f7317274d1bca06393de04ce.pack
-./.git/objects/pack/pack-6abd7912dfc3b2a6f7317274d1bca06393de04ce.rev
-./.git/objects/pack/pack-6abd7912dfc3b2a6f7317274d1bca06393de04ce.idx
+./.git/objects/pack/pack-7def6d2e6088e393dd5f5c1a698498d374b258b8.idx
+./.git/objects/pack/pack-7def6d2e6088e393dd5f5c1a698498d374b258b8.pack
+./.git/objects/pack/pack-7def6d2e6088e393dd5f5c1a698498d374b258b8.rev
 ./.git/hooks/sendemail-validate.sample
 ./.git/hooks/push-to-checkout.sample
 ./.git/hooks/post-update.sample
@@ -89,6 +89,7 @@ A projekt teljes fájlstruktúrája automatikusan generálva.
 ./com/janiplayer/ui/util/Interactions.kt
 ./com/janiplayer/ui/animation/Animations.kt
 ./com/janiplayer/ui/theme/UiDefaults.kt
+./com/janiplayer/ui/theme/Theme.kt
 ./com/janiplayer/ui/components/JaniListItem.kt
 ./com/janiplayer/data/playlist/PlaylistRepository.kt
 ./diag_modules.txt
