@@ -15,29 +15,18 @@ import com.janiplayer.audio.viewmodel.AudioViewModel
 import com.janiplayer.audio.dsp.EqPresetCache
 import kotlinx.coroutines.launch
 
-/**
- * Ultra‑tuning UI:
- * - derivedStateOf a pozícióhoz, hogy minimalizáljuk a redraw‑t
- * - debounce a slider eseményeknél
- * - csak a szükséges komponensek redrawolnak
- */
-
 @Composable
 fun AudioPlayerScreen(
     context: Context,
     uri: String,
     vm: AudioViewModel = viewModel()
 ) {
-    // init player lazily
     LaunchedEffect(Unit) {
         vm.initPlayer(context)
     }
 
-    // ultra‑tuning: derived state for position to avoid recomposition storms
     val uiState by vm.uiState.collectAsState()
-    val positionDerived by remember(uiState.positionMs) {
-        derivedStateOf { uiState.positionMs }
-    }
+    val positionDerived by remember { derivedStateOf { uiState.positionMs } }
 
     val coroutineScope = rememberCoroutineScope()
     var localVolume by remember { mutableStateOf(uiState.volume) }
@@ -67,12 +56,10 @@ fun AudioPlayerScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // Position display — derivedStateOf ensures this text updates only when position changes
         Text("Pozíció: ${positionDerived / 1000}s / ${uiState.durationMs / 1000}s")
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // Volume slider with debounce (simple coroutine debounce)
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("Volume", modifier = Modifier.width(72.dp))
             Slider(
@@ -90,7 +77,6 @@ fun AudioPlayerScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // EQ presets
         Text("EQ Presets", style = MaterialTheme.typography.labelMedium)
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -115,7 +101,6 @@ fun AudioPlayerScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // Simple DSP controls
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Button(onClick = { vm.setBass(1000) }) { Text("Bass+") }
             Button(onClick = { vm.setBass(0) }) { Text("Bass-") }
@@ -124,14 +109,12 @@ fun AudioPlayerScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // Minimal visualizer placeholder (kevesebb redraw)
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(48.dp)
                 .background(Color(0xFF111111))
         ) {
-            // intentionally minimal: avoid frequent recomposition
             Text(
                 text = if (uiState.isPlaying) "Playing" else "Stopped",
                 color = Color.White,
