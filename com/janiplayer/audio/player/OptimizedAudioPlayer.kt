@@ -1,9 +1,9 @@
 package com.janiplayer.audio.player
 
 import android.content.Context
-import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.MediaItem
+import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.DefaultLoadControl
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 
@@ -20,10 +20,10 @@ object OptimizedAudioPlayer {
 
         val loadControl = DefaultLoadControl.Builder()
             .setBufferDurationsMs(
-                minBufferMs = 5000,
+                minBufferMs = 5_000,
                 maxBufferMs = 30_000,
-                bufferForPlaybackMs = 1500,
-                bufferForPlaybackAfterRebufferMs = 3000
+                bufferForPlaybackMs = 1_500,
+                bufferForPlaybackAfterRebufferMs = 3_000
             )
             .build()
 
@@ -43,9 +43,22 @@ object OptimizedAudioPlayer {
             }
     }
 
+    /**
+     * Prepare and start playback. This method sets the media item, prepares the player and
+     * sets playWhenReady to true. It does not block; ExoPlayer handles async preparation.
+     */
     fun prepareAndPlay(player: ExoPlayer, uri: String) {
         player.setMediaItem(MediaItem.fromUri(uri))
         player.prepare()
-        player.play()
+        player.playWhenReady = true
+    }
+
+    fun pause(player: ExoPlayer) {
+        player.playWhenReady = false
+    }
+
+    fun stop(player: ExoPlayer) {
+        player.stop()
+        player.clearMediaItems()
     }
 }
