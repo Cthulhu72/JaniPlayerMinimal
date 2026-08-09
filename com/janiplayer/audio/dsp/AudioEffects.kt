@@ -1,32 +1,61 @@
 package com.janiplayer.audio.dsp
 
-import android.media.audiofx.*
+import android.media.audiofx.BassBoost
+import android.media.audiofx.Equalizer
+import android.media.audiofx.Virtualizer
+import android.util.Log
 
-class AudioEffects(
-    sessionId: Int
-) {
-    val equalizer = Equalizer(0, sessionId).apply {
-        enabled = true
+/**
+ * Egyszerű wrapper az Android audiofx osztályok köré.
+ * Tervezve: létrehozás audioSessionId alapján, release() hívható.
+ */
+class AudioEffects(private val audioSessionId: Int) {
+
+    private var equalizer: Equalizer? = null
+    private var bassBoost: BassBoost? = null
+    private var virtualizer: Virtualizer? = null
+
+    init {
+        try {
+            equalizer = Equalizer(0, audioSessionId).apply {
+                enabled = true
+            }
+            bassBoost = BassBoost(0, audioSessionId).apply {
+                enabled = true
+            }
+            virtualizer = Virtualizer(0, audioSessionId).apply {
+                enabled = true
+            }
+        } catch (t: Throwable) {
+            Log.w("AudioEffects", "AudioFX init failed: ${t.message}")
+            release()
+        }
     }
 
-    val bassBoost = BassBoost(0, sessionId).apply {
-        enabled = true
-        setStrength(500)
+    fun setEqBandLevel(band: Short, level: Short) {
+        equalizer?.let {
+            if (band < it.numberOfBands) {
+                it.setBandLevel(band, level)
+            }
+        }
     }
 
-    val virtualizer = Virtualizer(0, sessionId).apply {
-        enabled = true
-        setStrength(500)
+    fun setBassStrength(strength: Short) {
+        bassBoost?.setStrength(strength)
     }
 
-    val loudness = LoudnessEnhancer(sessionId).apply {
-        setTargetGain(500)
+    fun setVirtualizerStrength(strength: Short) {
+        virtualizer?.setStrength(strength)
     }
 
     fun release() {
-        equalizer.release()
-        bassBoost.release()
-        virtualizer.release()
-        loudness.release()
+        try {
+            equalizer?.release()
+            bassBoost?.release()
+            virtualizer?.release()
+        } catch (_: Throwable) { }
+        equalizer = null
+        bassBoost = null
+        virtualizer = null
     }
 }
