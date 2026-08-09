@@ -1,9 +1,5 @@
 package com.janiplayer.audio.dsp
 
-/**
- * Egyszerű EQ preset cache: néhány előre definiált preset,
- * gyors beállításhoz a UI-ból.
- */
 object EqPresetCache {
 
     data class Preset(val name: String, val bandLevels: ShortArray)
