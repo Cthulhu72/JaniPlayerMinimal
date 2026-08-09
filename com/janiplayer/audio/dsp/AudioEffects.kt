@@ -5,10 +5,6 @@ import android.media.audiofx.Equalizer
 import android.media.audiofx.Virtualizer
 import android.util.Log
 
-/**
- * Egyszerű wrapper az Android audiofx osztályok köré.
- * Tervezve: létrehozás audioSessionId alapján, release() hívható.
- */
 class AudioEffects(private val audioSessionId: Int) {
 
     private var equalizer: Equalizer? = null
@@ -16,6 +12,11 @@ class AudioEffects(private val audioSessionId: Int) {
     private var virtualizer: Virtualizer? = null
 
     init {
+        if (audioSessionId <= 0) {
+            Log.w("AudioEffects", "Invalid audioSessionId: $audioSessionId — skipping AudioFX init")
+            return
+        }
+
         try {
             equalizer = Equalizer(0, audioSessionId).apply {
                 enabled = true
@@ -34,18 +35,22 @@ class AudioEffects(private val audioSessionId: Int) {
 
     fun setEqBandLevel(band: Short, level: Short) {
         equalizer?.let {
-            if (band < it.numberOfBands) {
+            if (band in 0 until it.numberOfBands) {
                 it.setBandLevel(band, level)
             }
         }
     }
 
     fun setBassStrength(strength: Short) {
-        bassBoost?.setStrength(strength)
+        try {
+            bassBoost?.setStrength(strength)
+        } catch (_: Throwable) { }
     }
 
     fun setVirtualizerStrength(strength: Short) {
-        virtualizer?.setStrength(strength)
+        try {
+            virtualizer?.setStrength(strength)
+        } catch (_: Throwable) { }
     }
 
     fun release() {
