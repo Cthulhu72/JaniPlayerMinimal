@@ -7,6 +7,8 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.common.Player
 import com.janiplayer.audio.player.OptimizedAudioPlayer
 import com.janiplayer.audio.dsp.AudioEffects
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -28,8 +30,12 @@ class AudioViewModel : ViewModel() {
     private var player: ExoPlayer? = null
     private var effects: AudioEffects? = null
 
+    /**
+     * Initialize player lazily. Safe to call multiple times.
+     */
     fun initPlayer(context: Context) {
         if (player != null) return
+
         player = OptimizedAudioPlayer.create(context).also { p ->
             p.addListener(object : Player.Listener {
                 override fun onIsPlayingChanged(isPlaying: Boolean) {
@@ -41,9 +47,28 @@ class AudioViewModel : ViewModel() {
                     _uiState.update { it.copy(durationMs = if (duration >= 0) duration else 0L) }
                 }
             })
-            // lazy init effects after player created
-            effects = AudioEffects(p.audioSessionId)
-            _uiState.update { it.copy(audioSessionId = p.audioSessionId) }
+
+            // audioSessionId may be 0 until player has audio output; update when available
+            val sessionId = p.audioSessionId
+            if (sessionId > 0) {
+                effects = AudioEffects(sessionId)
+                _uiState.update { it.copy(audioSessionId = sessionId) }
+            } else {
+                // schedule a short check after prepare/play to pick up session id
+                viewModelScope.launch {
+                    delay(300)
+                    val sid = p.audioSessionId
+                    if (sid > 0) {
+                        effects = AudioEffects(sid)
+                        _uiState.update { it.copy(audioSessionId = sid) }
+                    }
+                }
+            }
+
+            // ensure volume state sync
+            _uiState.update { it.copy(volume = p.volume) }
+
+            // start ticker to update position periodically
             startPositionTicker()
         }
     }
@@ -53,11 +78,11 @@ class AudioViewModel : ViewModel() {
     }
 
     fun pause() {
-        player?.pause()
+        player?.let { OptimizedAudioPlayer.pause(it) }
     }
 
     fun stop() {
-        player?.stop()
+        player?.let { OptimizedAudioPlayer.stop(it) }
     }
 
     fun setVolume(v: Float) {
@@ -82,10 +107,10 @@ class AudioViewModel : ViewModel() {
 
     private fun startPositionTicker() {
         viewModelScope.launch {
-            while (true) {
+            while (isActive) {
                 val pos = player?.currentPosition ?: 0L
                 _uiState.update { it.copy(positionMs = pos) }
-                kotlinx.coroutines.delay(250) // ultra‑tuning: 250ms tick, UI uses derivedStateOf to avoid redraws
+                delay(250)
             }
         }
     }
